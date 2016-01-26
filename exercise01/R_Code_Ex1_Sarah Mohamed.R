@@ -183,11 +183,12 @@ Records$over_50kF <- as.factor(Records$over_50kF)
 
 p1 <- ggplot(data.frame(Records),aes(x=age_bin, fill = over_50kF))
 p1 <- p1   + geom_bar() + ggtitle ("Age") +
-  xlab("Age Range") + ylab("Total count") + labs(fill = ">50k Salary")
+  ylab("Count") + labs(fill = ">50k Salary")
+p1 <- p1  + theme(text = element_text(size = 15), axis.title.x=element_blank())
 
 p2 <- ggplot(data.frame(Records),aes(x=Workclass, fill = over_50kF))
 p2 <- p2  + geom_bar() + ggtitle ("Workclass") +
-  xlab("Workclass") + ylab("Total count") + labs(fill = ">50k Salary")
+  xlab("Workclass") + ylab("Count") + labs(fill = ">50k Salary")
 
 Records$Education_level2 <- factor(Records$Education_level, levels = 
                               c("Preschool", "1st-4th","5th-6th", "7th-8th",
@@ -197,7 +198,8 @@ Records$Education_level2 <- factor(Records$Education_level, levels =
                                 "Doctorate"))
 p3 <- ggplot(data.frame(Records),aes(x=Education_level2, fill = over_50kF))
 p3 <- p3  + geom_bar() + ggtitle ("Education Level") +
-  xlab("Education Level") + ylab("Total count") + labs(fill = ">50k Salary")
+  ylab("Count") + labs(fill = ">50k Salary")
+p3 <- p3  + theme(text = element_text(size = 15), axis.title.x=element_blank())
 
 Records$Marital_Status2 <- factor(Records$Marital_Status, levels = 
                                      c("Never-married", "Married-civ-spouse", "Married-AF-spouse",
@@ -205,11 +207,12 @@ Records$Marital_Status2 <- factor(Records$Marital_Status, levels =
                                        "Widowed" ))
 p4 <- ggplot(data.frame(Records),aes(x=Marital_Status2, fill = over_50kF))
 p4 <- p4  + geom_bar() + ggtitle ("Marital Status") +
-  xlab("Marital Status") + ylab("Total count") + labs(fill = ">50k Salary")
+  ylab("Count") + labs(fill = ">50k Salary")
+p4 <- p4  + theme(text = element_text(size = 15), axis.title.x=element_blank())
 
 p5 <- ggplot(data.frame(Records),aes(x=Occupation, fill = over_50kF))
 p5 <- p5   + geom_bar() + ggtitle ("Occupation") +
-  xlab("Occupation") + ylab("Total count") + labs(fill = ">50k Salary")
+  ylab("Count") + labs(fill = ">50k Salary")
 
 Records$Relationship2 <- factor(Records$Relationship, levels = 
                                     c("Husband", "Wife" ,  "Unmarried",
@@ -217,15 +220,18 @@ Records$Relationship2 <- factor(Records$Relationship, levels =
                                       "Other-relative"))
 p6 <- ggplot(data.frame(Records),aes(x=Relationship2, fill = over_50kF))
 p6 <- p6   + geom_bar() + ggtitle ("Relationship") +
-  xlab("Relationship") + ylab("Total count") + labs(fill = ">50k Salary")
+   ylab("Count") + labs(fill = ">50k Salary")
+p6 <- p6  + theme(text = element_text(size = 15), axis.title.x=element_blank())
 
 p7 <- ggplot(data.frame(Records),aes(x=Sex, fill = over_50kF))
 p7 <- p7   + geom_bar() + ggtitle ("Sex") +
-  xlab("Sex") + ylab("Total count") + labs(fill = ">50k Salary")
+   ylab("Count") + labs(fill = ">50k Salary")
+p7 <- p7  + theme(text = element_text(size = 15), axis.title.x=element_blank())
 
 p8 <- ggplot(data.frame(Records),aes(x=hours_week_bin, fill = over_50kF))
 p8 <- p8   + geom_bar() + ggtitle ("Work Hours per Week") +
-  xlab("Number of Hours") + ylab("Total count") + labs(fill = ">50k Salary")
+   ylab("Count") + labs(fill = ">50k Salary")
+p8 <- p8  + theme(text = element_text(size = 15), axis.title.x=element_blank())
 
 library(gridExtra)
 grid.arrange( p1, p7, p4, ncol=1, nrow=3)
